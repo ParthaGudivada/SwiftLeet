@@ -7,5 +7,5 @@
 
 import Foundation
 
-print("Hello, World!")
+print("Welcome to Swift world of DSA")
 
