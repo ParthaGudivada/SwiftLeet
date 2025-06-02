@@ -12,7 +12,6 @@
 		ACA45E962DEE493D002E4BD6 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = ACA45E952DEE493D002E4BD6 /* DequeModule */; };
 		ACA45E982DEE493D002E4BD6 /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = ACA45E972DEE493D002E4BD6 /* HashTreeCollections */; };
 		ACA45E9A2DEE493D002E4BD6 /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = ACA45E992DEE493D002E4BD6 /* HeapModule */; };
-		ACA45E9C2DEE5218002E4BD6 /* 1570_Dot_Product_Sparse_Vectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA45E9B2DEE5218002E4BD6 /* 1570_Dot_Product_Sparse_Vectors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		AC6021DE2DED0CD800A9A890 /* SwiftLeet */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftLeet; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACA45E9B2DEE5218002E4BD6 /* 1570_Dot_Product_Sparse_Vectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1570_Dot_Product_Sparse_Vectors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -59,7 +57,6 @@
 		AC6021D52DED0CD800A9A890 = {
 			isa = PBXGroup;
 			children = (
-				ACA45E9B2DEE5218002E4BD6 /* 1570_Dot_Product_Sparse_Vectors.swift */,
 				AC6021E02DED0CD800A9A890 /* SwiftLeet */,
 				ACA45C9B2DED7A9E002E4BD6 /* Frameworks */,
 				AC6021DF2DED0CD800A9A890 /* Products */,
@@ -153,7 +150,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACA45E9C2DEE5218002E4BD6 /* 1570_Dot_Product_Sparse_Vectors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
