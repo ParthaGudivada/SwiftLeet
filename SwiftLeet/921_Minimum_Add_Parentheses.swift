@@ -29,24 +29,31 @@ final class MinimumAddParenthesesSolution {
 
 final class MinimumAddParenthesesVariantSolution {
     func makeAValidString(_ s: String) -> String {
-        var extraOpen = 0
         var rslt = ""
+        var extraOpen = 0
 
         for char in s {
             if char == "(" {
+                rslt.append(char)
                 extraOpen += 1
-            } else {
+            } else if char == ")" {
                 if extraOpen > 0 {
                     extraOpen -= 1
+                    rslt.append(char)
                 } else {
-                    rslt += "("
+                    rslt.append("(")
+                    rslt.append(char)
                 }
+            } else {
+                rslt.append(char)
             }
-
-            rslt += String(char)
         }
 
-        rslt += String(Array(repeating: ")", count: extraOpen))
+        rslt.append(String(repeating: ")", count: extraOpen))
         return rslt
     }
 }
+
+//let soln = MinimumAddParenthesesVariantSolution()
+//print(soln.makeAValidString("()))"))
+//print(soln.makeAValidString("())))"))

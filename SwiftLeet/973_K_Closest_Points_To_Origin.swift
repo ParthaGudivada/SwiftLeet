@@ -8,8 +8,8 @@
 import Foundation
 import HeapModule
 
-final class KClosestPointsToOrigin {
-    struct Position: Comparable {
+final class KClosePointsSolution {
+    struct Pos: Comparable {
         let x: Int
         let y: Int
 
@@ -18,32 +18,39 @@ final class KClosestPointsToOrigin {
             self.y = y
         }
 
-        var dist: Int {
+        var distSquared: Int {
             x * x + y * y
         }
 
-        static func < (lhs: Position, rhs: Position) -> Bool {
-            lhs.dist < rhs.dist
+        static func < (lhs: Pos, rhs: Pos) -> Bool {
+            lhs.distSquared < rhs.distSquared
         }
-
     }
 
+
     func kClosest(_ points: [[Int]], _ k: Int) -> [[Int]] {
-        var heap = Heap<Position>()
+        var heap = Heap<Pos>()
+        let len = points.count
 
-        for point in points {
-            let cur = Position(point[0], point[1])
+        for i in 0 ..< k {
+            let pt = points[i]
+            heap.insert(Pos(pt[0], pt[1]))
+        }
 
-            if heap.count == k {
-                if cur > heap.max! {
+        for i in k ..< len {
+            let cur = points[i]
+            let pos = Pos(cur[0], cur[1])
+
+            if let curMax = heap.max {
+                if pos < curMax {
                     _ = heap.popMax()
-                    heap.insert(cur)
+                    heap.insert(pos)
                 }
-            } else {
-                heap.insert(cur)
             }
         }
 
-        return heap.unordered.map { [$0.x, $0.y] }
+        return heap.unordered.map {
+            [$0.x, $0.y]
+        }
     }
 }
