@@ -32,11 +32,7 @@ final class ValidPalindromeSolution {
     }
 }
 
-//extension Character {
-//    var isAlphaNumeric: Bool {
-//        isLetter || isNumber
-//    }
-//}
+
 
 final class ValidPalindromeVariantSolution {
     func isPalindrome(_ s: String, _ include: [Character]) -> Bool {
