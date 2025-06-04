@@ -71,8 +71,7 @@ final class ExclusiveTimeFunctionVariantSolution {
             let log = Log(strLog)
 
             if log.isBegin {
-                if !stack.isEmpty {
-                    let last = stack.last!
+                if let last = stack.last {
                     rslt[last.name, default: 0] += log.time - prevTime
                 }
 
