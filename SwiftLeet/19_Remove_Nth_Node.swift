@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RemoveNthNodeSolution {
+final class RemoveNthNodeSolution {
     func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
         let dummy: ListNode? = ListNode(-1, head)
         var r = dummy
@@ -27,9 +27,9 @@ class RemoveNthNodeSolution {
     }
 }
 
-class RemoveNthNodeVariantSolution {
-    func removeNthFromBeginning(_ head: ListNode?, _ n: Int) -> ListNode? {
-        let  dummy: ListNode? = ListNode(-1, head)
+final class RemoveNthNodeVariantSolution {
+    func removeNodeFromBeginning(_ head: ListNode?, _ n: Int) -> ListNode? {
+        let dummy: ListNode? = ListNode(-1, head)
         var l = dummy
 
         for _ in 0 ... n {
