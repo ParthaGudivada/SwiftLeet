@@ -110,7 +110,7 @@ final class RobotRoomCleanerVariantSolution {
             let x = r + Direction.normal[i].row
             let y = c + Direction.normal[i].col
 
-            if !visited.contains([x, y]) {
+            if visited.contains([x, y]) {
                 continue
             }
 
