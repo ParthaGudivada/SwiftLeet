@@ -20,25 +20,28 @@ final class DecodeStringSolution {
 
     func decodeString(_ s: String) -> String {
         var stack = [StrCount]()
-
-        var str = ""
-        var count = 0
+        var curCount = 0
+        var curStr = ""
 
         for char in s {
-            if char.isNumber {
-                count = count * 10 + Int(String(char))!
-            } else if char == "[" {
-                stack.append(StrCount(str, count))
-                str = ""
-                count = 0
-            } else if char == "]" {
+            switch char {
+            case "0"..."9":
+                curCount = curCount * 10 + Int(String(char))!
+
+            case "[":
+                stack.append(StrCount(curStr, curCount))
+                curStr = ""
+                curCount = 0
+
+            case "]":
                 let prev = stack.removeLast()
-                str = prev.str + String(repeating: str, count: prev.count)
-            } else {
-                str += String(char)
+                curStr = prev.str + String(repeating: curStr, count: prev.count)
+
+            default:
+                curStr.append(char)
             }
         }
 
-        return str
+        return curStr
     }
 }

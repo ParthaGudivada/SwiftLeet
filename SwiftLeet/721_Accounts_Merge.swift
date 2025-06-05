@@ -55,44 +55,42 @@ final class AccountsMergeSolution {
 final class AccountsMergeVariantSolution {
     func mergeAccountIDs(_ accounts: [String: [String]]) -> [[String]] {
         var adj = [String: [String]]()
-        var visited = Set<String>()
-        var idToOtherIds = [String: [String]]()        // id: to related ids
 
-        for (_, account) in accounts {
-            let firstEmail = account[0]
+        for (id, emails) in accounts {
+            let firstEmail = emails[0]
 
-            for i in 1 ..< account.count {
-                adj[firstEmail, default: []].append(account[i])
-                adj[account[i], default: []].append(firstEmail)
+            for i in 1 ..< emails.count {
+                adj[firstEmail, default: []].append(emails[i])
+                adj[emails[i], default: []].append(firstEmail)
             }
         }
 
         var emailToId = [String: String]()
-        for (id, account) in accounts {
-            let firstEmail = account[0]
+        var idToOtherIds = [String: [String]]()
+        var visited = Set<String>()
+
+        for (id, emails) in accounts {
+            let firstEmail = emails[0]
 
             if visited.contains(firstEmail) {
-                let foundId = emailToId[firstEmail]!
-                idToOtherIds[foundId]!.append(id)
+                if let foundID = emailToId[firstEmail] {
+                    idToOtherIds[foundID]!.append(id)
+                }
             } else {
                 idToOtherIds[id] = []
-                helper(adj, firstEmail, id, &visited, &emailToId)
+                helper(adj, id, firstEmail, &visited, &emailToId)
             }
         }
 
-        var rslt = [[String]]()
-        for (key, values) in idToOtherIds {
-            var local = [String]()
-            local.append(key)
-            local.append(contentsOf: values)
-            rslt.append(local)
+        let rslt = idToOtherIds.map { (id, otherIds) in
+            [id] + otherIds
         }
 
         return rslt
     }
 
     private func helper(
-        _ adj: [String: [String]], _ email: String, _ id: String,
+        _ adj: [String: [String]], _ id: String, _ email: String,
         _ visited: inout Set<String>, _ emailToId: inout [String: String]
     ) {
         visited.insert(email)
@@ -100,8 +98,20 @@ final class AccountsMergeVariantSolution {
 
         if let neighbors = adj[email] {
             for neighbor in neighbors where !visited.contains(neighbor) {
-                helper(adj, neighbor, id, &visited, &emailToId)
+                helper(adj, id, neighbor, &visited, &emailToId)
             }
         }
     }
 }
+
+//let accountVariant = AccountsMergeVariantSolution()
+//let accounts = [
+//    "C1": ["a", "b"],
+//    "C2": ["c"],
+//    "C3": ["b", "d"],
+//    "C4": ["d"],
+//    "C5": ["e"],
+//    "C6": ["c"],
+//    "C7": ["a"]
+//]
+//print(accountVariant.mergeAccountIDs(accounts))

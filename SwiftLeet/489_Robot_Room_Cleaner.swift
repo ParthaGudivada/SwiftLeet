@@ -57,7 +57,6 @@ final class RobotRoomCleanerSolution {
     }
 }
 
-
 struct Direction {
     let row: Int
     let col: Int
@@ -92,59 +91,6 @@ protocol Mouse {
     func hasCheese() -> Bool
 }
 
-//final class RobotRoomCleanerVariantSolution {
-//    private var directions: [Direction] = [
-//       Direction(-1, 0),
-//       Direction(0, 1),
-//       Direction(1, 0),
-//       Direction(0, -1)
-//    ]
-//
-//    private var oppositeDirections: [Direction] = [
-//        Direction(1, 0),
-//        Direction(0, -1),
-//        Direction(-1, 0),
-//        Direction(0, 1)
-//    ]
-//
-//    func getCheese(_ mouse: Mouse) -> Bool {
-//        var visited = Set<[Int]>()
-//        return dfs(mouse, 0, 0, &visited)
-//    }
-//
-//    private func dfs(
-//        _ mouse: Mouse, _ r: Int, _ c: Int, _ visited: inout Set<[Int]>
-//    ) -> Bool {
-//        if mouse.hasCheese() {
-//            return true
-//        }
-//
-//        visited.insert([r, c])
-//
-//        for i in 0 ..< directions.count {
-//            let x = r + directions[i].row
-//            let y = c + directions[i].col
-//
-//            if !visited.contains([x, y]) {
-//                continue
-//            }
-//
-//            if mouse.move(directions[i]) {
-//                _ = mouse.move(oppositeDirections[i])
-//                continue
-//            }
-//
-//            if dfs(mouse, x, y, &visited) {
-//                return true
-//            }
-//
-//            _ = mouse.move(oppositeDirections[i])
-//        }
-//
-//        return false
-//    }
-//}
-
 final class RobotRoomCleanerVariantSolution {
     func getCheese(_ mouse: Mouse) -> Bool {
         var visited = Set<[Int]>()
@@ -164,7 +110,7 @@ final class RobotRoomCleanerVariantSolution {
             let x = r + Direction.normal[i].row
             let y = c + Direction.normal[i].col
 
-            if visited.contains([x, y]) {
+            if !visited.contains([x, y]) {
                 continue
             }
 
@@ -177,9 +123,10 @@ final class RobotRoomCleanerVariantSolution {
                 return true
             }
 
-           _ = mouse.move(Direction.opposite[i])
+            _ = mouse.move(Direction.opposite[i])
         }
 
         return false
     }
 }
+

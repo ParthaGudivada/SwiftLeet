@@ -49,10 +49,6 @@ final class BSTPreOrderIteratorSolution {
         stack.append(root)
     }
 
-    func hasNext() -> Bool {
-        !stack.isEmpty
-    }
-
     func next() -> Int {
         guard hasNext() else {
             return Int.min
@@ -70,38 +66,38 @@ final class BSTPreOrderIteratorSolution {
 
         return cur.val
     }
+
+    func hasNext() -> Bool {
+        !stack.isEmpty
+    }
 }
 
 final class BSTPostOrderIteratorSolution {
     private var stack = [TreeNode]()
 
     init(_ root: TreeNode?) {
-        var tempStack = [TreeNode]()
-
         guard let root else {
             return
         }
 
+        var tempStack = [TreeNode]()
         tempStack.append(root)
 
         while !tempStack.isEmpty {
-            let node = tempStack.removeLast()
-            stack.append(node)
+            let cur = tempStack.removeLast()
+            stack.append(cur)
 
-            if let left = node.left {
+            if let left = cur.left {
                 tempStack.append(left)
             }
 
-            if let right = node.right {
+            if let right = cur.right {
                 tempStack.append(right)
             }
+
         }
 
-        _ = stack.reversed()
-    }
-
-    func hasNext() -> Bool {
-        !stack.isEmpty
+        stack.reverse()
     }
 
     func next() -> Int {
@@ -110,6 +106,10 @@ final class BSTPostOrderIteratorSolution {
         }
 
         return stack.removeLast().val
+    }
+
+    func hasNext() -> Bool {
+        !stack.isEmpty
     }
 }
 
