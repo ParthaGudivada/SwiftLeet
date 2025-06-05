@@ -34,29 +34,35 @@ final class GroupShiftedStringsSolution {
 
 final class GroupShiftedStringsVariantSolution {
     func rotationalCipher(_ str: String, _ factor: Int) -> String {
-        let sArr = Array(str)
         var rslt = ""
 
-        for char in sArr {
-            if char.isLowercase {
-                rslt += shiftBy(char, "a", 26, factor)
-            } else if char.isUppercase {
-                rslt += shiftBy(char, "A", 26, factor)
-            } else if char.isNumber {
-                rslt += shiftBy(char, "0", 10, factor)
-            } else {
-                rslt.append(String(char))
+        for char in str {
+            switch char {
+            case "a"..."z":
+                rslt.append(rotate(char, "a", factor, 26))
+            case "A"..."Z":
+                rslt.append(rotate(char, "A", factor, 26))
+            case "0"..."9":
+                rslt.append(rotate(char, "0", factor, 10))
+            default:
+                rslt.append(char)
             }
         }
 
         return rslt
     }
 
-    private func shiftBy(_ char: Character, _ baseChar: Character, _ modBy: Int, _ factor: Int) -> String {
+    private func rotate(_ char: Character, _ baseChar: Character, _ rFactor: Int, _ modBy: Int) -> String {
         let diff = Int(char.asciiValue!) - Int(baseChar.asciiValue!)
-        let updated = (diff + factor) % modBy
-        let intValue = UInt8(updated) + baseChar.asciiValue!
-        let uni = UnicodeScalar(intValue)
-        return String(uni)
+        let actual = (diff + rFactor) % modBy
+        let rotatedChar = UnicodeScalar(actual + Int(baseChar.asciiValue!))
+        return String(rotatedChar!)
     }
 }
+
+//let cipher = GroupShiftedStringsVariantSolution()
+//print(cipher.rotationalCipher("89_yfZZ@", 3))
+//print(cipher.rotationalCipher("89_yfZZ@", 3))
+//print(cipher.rotationalCipher("minMerz-984", 5))
+//print(cipher.rotationalCipher("minMerz-894", 5))
+//print(cipher.rotationalCipher("XYZ_abo_112288", 39))

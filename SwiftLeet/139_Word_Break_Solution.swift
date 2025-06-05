@@ -29,3 +29,40 @@ final class WordBreakSolution {
         return dp[len]
     }
 }
+
+final class WordBreakUsingMemoizationDFSSolution {
+    func wordBreak(_ s: String, _ wordDict: [String]) -> Bool {
+        let sArr = Array(s)
+        let len = sArr.count
+        let wordSet = Set(wordDict)
+        var memo = [Int: Bool]()
+
+        return dfs(sArr, 0, len, wordSet, &memo)
+    }
+
+    private func dfs(
+        _ sArr: [Character], _ startIdx: Int, _ len: Int,
+        _ wordSet: Set<String>, _ memo: inout [Int: Bool]
+    ) -> Bool {
+        if startIdx == len {
+            return true
+        }
+
+        if let exist = memo[startIdx] {
+            return exist
+        }
+
+        for endIdx in (startIdx + 1)...len {
+            let curWord = String(sArr[startIdx ..< endIdx])
+
+            if wordSet.contains(curWord) &&
+                dfs(sArr, endIdx, len, wordSet, &memo) {
+                memo[startIdx] = true
+                return true
+            }
+        }
+
+        memo[startIdx] = false
+        return false
+    }
+}
