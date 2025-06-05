@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC8AC6C92DF11817004D4112 /* 75_Sort_Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8AC6C82DF11817004D4112 /* 75_Sort_Colors.swift */; };
 		ACA45E922DEE493D002E4BD6 /* BitCollections in Frameworks */ = {isa = PBXBuildFile; productRef = ACA45E912DEE493D002E4BD6 /* BitCollections */; };
 		ACA45E942DEE493D002E4BD6 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = ACA45E932DEE493D002E4BD6 /* Collections */; };
 		ACA45E962DEE493D002E4BD6 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = ACA45E952DEE493D002E4BD6 /* DequeModule */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		AC6021DE2DED0CD800A9A890 /* SwiftLeet */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftLeet; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC8AC6C82DF11817004D4112 /* 75_Sort_Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 75_Sort_Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -57,6 +59,7 @@
 		AC6021D52DED0CD800A9A890 = {
 			isa = PBXGroup;
 			children = (
+				AC8AC6C82DF11817004D4112 /* 75_Sort_Colors.swift */,
 				AC6021E02DED0CD800A9A890 /* SwiftLeet */,
 				ACA45C9B2DED7A9E002E4BD6 /* Frameworks */,
 				AC6021DF2DED0CD800A9A890 /* Products */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8AC6C92DF11817004D4112 /* 75_Sort_Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
