@@ -7,11 +7,11 @@
 
 import Foundation
 
-class NArrNode {
+public class NArrNode {
     let val: Int
     let children: [NArrNode]
 
-    init(_ val: Int, _ children: [NArrNode]) {
+    public init(_ val: Int, _ children: [NArrNode]) {
         self.val = val
         self.children = children
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SortColorsSolution {
+final class SortColorsSolution {
     func sortColors(_ nums: inout [Int]) {
         var l = 0
         var m = 0

@@ -23,7 +23,7 @@ class MonotonicArraySolution {
             }
 
             if mInc == false && mDec == false {
-                return false 
+                return false
             }
         }
 
