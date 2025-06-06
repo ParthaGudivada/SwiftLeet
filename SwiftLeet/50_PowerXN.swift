@@ -1,6 +1,6 @@
 //
 //  50_PowerXN.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/30/25.
 //

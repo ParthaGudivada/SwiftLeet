@@ -1,6 +1,6 @@
 //
 //  19_Remove_Nth_Node.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/24/25.
 //

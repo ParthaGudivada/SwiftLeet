@@ -1,6 +1,6 @@
 //
 //  1762_Building_Ocean_View.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/31/25.
 //

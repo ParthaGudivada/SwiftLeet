@@ -1,6 +1,6 @@
 //
 //  NestedInteger.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/29/25.
 //

@@ -1,6 +1,6 @@
 //
 //  1091_Shortest_Path_Binary_Matrix.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/31/25.
 //

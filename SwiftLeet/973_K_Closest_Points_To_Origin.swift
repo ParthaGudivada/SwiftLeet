@@ -1,6 +1,6 @@
 //
 //  973_K_Closest_Points_To_Origin.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/23/25.
 //

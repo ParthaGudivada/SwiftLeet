@@ -1,6 +1,6 @@
 //
 //  125_Valid_Palindrome.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/31/25.
 //

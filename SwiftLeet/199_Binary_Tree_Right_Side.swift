@@ -1,6 +1,6 @@
 //
 //  199_Binary_Tree_Right_Side.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/31/25.
 //

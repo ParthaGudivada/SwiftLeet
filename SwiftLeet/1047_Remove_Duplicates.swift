@@ -1,6 +1,6 @@
 //
 //  1047_Remove_Duplicates.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/25/25.
 //

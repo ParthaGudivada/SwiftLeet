@@ -1,6 +1,6 @@
 //
 //  56_Merge_Intervals.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 6/1/25.
 //

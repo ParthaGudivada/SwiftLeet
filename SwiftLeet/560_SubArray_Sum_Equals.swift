@@ -1,6 +1,6 @@
 //
 //  560_SubArray_Sum_Equals.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/30/25.
 //

@@ -1,6 +1,6 @@
 //
 //  34_Find_First_Last_Position.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/23/25.
 //

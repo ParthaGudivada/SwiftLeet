@@ -1,6 +1,6 @@
 //
 //  347_Top_K_Frequent_Elements.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/31/25.
 //

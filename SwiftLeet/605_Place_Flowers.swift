@@ -19,12 +19,10 @@ final class PlaceFlowersSolution {
                 continue
             }
 
-            let canBePlacedLeft = i == 0 || flowerbed[i - 1] == 0
-            let canBePlacedRight = (i == len - 1) || flowerbed[i + 1] == 0
+            let isLeftEmpty = i == 0 || flowerbed[i - 1] == 0
+            let isRightEmpty  = (i == len - 1) || flowerbed[i + 1] == 0
 
-            let canBePlaced = canBePlacedLeft && canBePlacedRight
-
-            if canBePlaced {
+            if isLeftEmpty  && isRightEmpty {
                 placedFlowers += 1
 
                 if placedFlowers >= n {
@@ -53,10 +51,10 @@ final class PlaceFlowersVariantSolution {
                 continue
             }
 
-            let emptyLeft = i == 0 || flowerbed[i - 1] == 0
-            let emptyRight = i == len - 1 || flowerbed[i + 1] == 0
+            let isLeftEmpty = i == 0 || flowerbed[i - 1] == 0
+            let isRightEmpty  = (i == len - 1) || flowerbed[i + 1] == 0
 
-            if emptyLeft && emptyRight {
+            if isLeftEmpty  && isRightEmpty {
                 placed += 1
                 i += 1
             }

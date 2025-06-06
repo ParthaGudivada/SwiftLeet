@@ -1,6 +1,6 @@
 //
 //  200_Number_Of_Islands.swift
-//  DSALearning
+//  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/26/25.
 //
