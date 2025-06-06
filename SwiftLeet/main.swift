@@ -8,9 +8,3 @@
 import Foundation
 
 print("Welcome to Swift world of DSA")
-
-let soln = RemoveAllAdjacentDuplicatesVariantSolution()
-var s = "abbbacxdd"
-print(soln.removeAllDuplicates(s))
-s = "azxxxzy"
-print(soln.removeAllDuplicates(s))

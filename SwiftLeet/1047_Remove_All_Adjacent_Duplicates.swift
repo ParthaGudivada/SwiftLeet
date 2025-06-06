@@ -50,3 +50,9 @@ final class RemoveAllAdjacentDuplicatesVariantSolution {
         return stack.map { String($0) }.joined()
     }
 }
+
+//let soln = RemoveAllAdjacentDuplicatesVariantSolution()
+//var s = "abbbacxdd"
+//print(soln.removeAllDuplicates(s))
+//s = "azxxxzy"
+//print(soln.removeAllDuplicates(s))

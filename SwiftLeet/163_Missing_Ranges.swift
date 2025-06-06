@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MissingRangesSolution {
+final class MissingRangesSolution {
     func findMissingRanges(_ nums: [Int], _ lower: Int, _ upper: Int) -> [[Int]] {
         if nums.isEmpty {
             return [[lower, upper]]
@@ -37,54 +37,32 @@ class MissingRangesSolution {
     }
 }
 
-//final class MissingRangesVariantSolution {
-//    func findMissingRanges(_ nums: [Int], _ lower: Int, _ upper: Int) -> [String] {
-//        var nums = nums
-//        nums.append(upper + 1)
-//        var curLower = lower
-//        var missing = [String]()
-//
-//        for num in nums {
-//            let diff = num - curLower
-//
-//            if diff == 1 {
-//                missing.append("\(curLower)")
-//            } else if diff == 2 {
-//                missing.append("\(curLower)")
-//                missing.append("\(curLower + 1)")
-//            } else if diff > 2  {
-//                missing.append("\(curLower)-\(num - 1)")
-//            }
-//
-//            curLower = num + 1
-//        }
-//
-//        return missing
-//    }
-//}
-
 final class MissingRangesVariantSolution {
     func findMissingRanges(_ nums: [Int], _ lower: Int, _ upper: Int) -> [String] {
-        var missing = [String]()
         var curLower = lower
         var nums = nums
         nums.append(upper + 1)
+        var rslt = [String]()
 
         for num in nums {
             let diff = num - curLower
-            
+
             if diff == 1 {
-                missing.append("\(curLower)")
+                rslt.append(String(curLower))
             } else if diff == 2 {
-                missing.append("\(curLower)")
-                missing.append("\(curLower + 1)")
+                rslt.append(String(curLower))
+                rslt.append(String(curLower + 1))
             } else if diff > 2 {
-                missing.append("\(curLower)-\(num - 1)")
+                rslt.append("\(curLower)-\(num - 1)")
             }
 
             curLower = num + 1
         }
 
-        return missing
+        return rslt
     }
 }
+
+//let soln = MissingRangesVariantSolution()
+//let nums = [5, 8, 9, 15, 16, 18, 20]
+//print(soln.findMissingRanges(nums, 2, 87))
