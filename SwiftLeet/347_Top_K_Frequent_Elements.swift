@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TopKFrequentElementsSolution {
+final class TopKFrequentElementsSolution {
     func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
         let len = nums.count
         var numToFre = [Int: Int]()
@@ -37,3 +37,9 @@ class TopKFrequentElementsSolution {
         return rslt
     }
 }
+
+//let soln = TopKFrequentElementsSolution()
+//var nums = [1, 1, 1, 5, 5, 5, 10000000000, 10000000000, 10000000000]
+//print(soln.topKFrequent(nums, 2))
+//nums = [5, 5, 5, 1, 1, 1, 10000000000, 10000000000, 10000000000]
+//print(soln.topKFrequent(nums, 2))

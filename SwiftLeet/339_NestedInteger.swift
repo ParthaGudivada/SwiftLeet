@@ -5,7 +5,6 @@
 //  Created by Parthasarathy Gudivada on 5/29/25.
 //
 
-
 /**
  * // This is the interface that allows for creating nested lists.
  * // You should not implement it, or speculate about its implementation
@@ -44,7 +43,6 @@ protocol NestedInteger {
 
     func getList() -> [NestedInteger]
 }
-
 
 final class NestedIntegerSolution {
     func depthSum(_ nestedList: [NestedInteger]) -> Int {
