@@ -1,5 +1,5 @@
 //
-//  Solution.swift
+//  CircularListSolution.swift
 //  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 6/4/25.

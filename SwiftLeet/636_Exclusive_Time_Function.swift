@@ -1,5 +1,5 @@
 //
-//  Solution 3.swift
+//  ExclusiveTimeFunctionSolution.swift
 //  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/25/25.

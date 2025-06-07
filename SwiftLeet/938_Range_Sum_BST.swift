@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RangeSumBSTSolution {
+final class RangeSumBSTSolution {
     func rangeSumBST(_ root: TreeNode?, _ low: Int, _ high: Int) -> Int {
         guard let root else {
             return 0

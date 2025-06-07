@@ -1,5 +1,5 @@
 //
-//  Solution 3.swift
+//  MaximumSwapSolution.swift
 //  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 6/1/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MaximumSwapSolution {
+final class MaximumSwapSolution {
     func maximumSwap(_ num: Int) -> Int {
         var numArr = [Int]()
 

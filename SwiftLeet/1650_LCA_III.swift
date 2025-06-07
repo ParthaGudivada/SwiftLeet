@@ -7,21 +7,22 @@
 
 import Foundation
 
-final class NodeP {
-    let val: Int
-    var left: NodeP?
-    var right: NodeP?
-    var parent: NodeP?
-
-    init(_ val: Int, _ left: NodeP? = nil, _ right: NodeP? = nil, _ parent: NodeP? = nil) {
-        self.val = val
-        self.left = left
-        self.right = right
-        self.parent = parent
-    }
-}
-
 final class LowestCommonAncestorIIISolution {
+    
+    final class NodeP {
+        let val: Int
+        var left: NodeP?
+        var right: NodeP?
+        var parent: NodeP?
+
+        init(_ val: Int, _ left: NodeP? = nil, _ right: NodeP? = nil, _ parent: NodeP? = nil) {
+            self.val = val
+            self.left = left
+            self.right = right
+            self.parent = parent
+        }
+    }
+
     func lowestCommonAncestor(_ p: NodeP?,_ q: NodeP?) -> NodeP? {
         var pStart = p
         var qStart = q

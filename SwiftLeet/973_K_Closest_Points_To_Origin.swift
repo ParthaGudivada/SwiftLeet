@@ -9,7 +9,7 @@ import Foundation
 import HeapModule
 
 final class KClosePointsSolution {
-    struct Pos: Comparable {
+    struct Point: Comparable {
         let x: Int
         let y: Int
 
@@ -18,39 +18,36 @@ final class KClosePointsSolution {
             self.y = y
         }
 
-        var distSquared: Int {
+        init(_ arr: [Int]) {
+            self.x = arr[0]
+            self.y = arr[1]
+        }
+
+        var dist: Int {
             x * x + y * y
         }
 
-        static func < (lhs: Pos, rhs: Pos) -> Bool {
-            lhs.distSquared < rhs.distSquared
+        static func < (lhs: Point, rhs: Point) -> Bool {
+            lhs.dist < rhs.dist
         }
     }
 
-
     func kClosest(_ points: [[Int]], _ k: Int) -> [[Int]] {
-        var heap = Heap<Pos>()
-        let len = points.count
+        var ptsHeap = Heap<Point>()
 
-        for i in 0 ..< k {
-            let pt = points[i]
-            heap.insert(Pos(pt[0], pt[1]))
-        }
-
-        for i in k ..< len {
-            let cur = points[i]
-            let pos = Pos(cur[0], cur[1])
-
-            if let curMax = heap.max {
-                if pos < curMax {
-                    _ = heap.popMax()
-                    heap.insert(pos)
+        for pt in points {
+            let cur = Point(pt)
+            if ptsHeap.count >= k {
+                if cur < ptsHeap.max! {
+                    _ = ptsHeap.popMax()
+                    ptsHeap.insert(cur)
                 }
+
+            } else {
+                ptsHeap.insert(cur)
             }
         }
 
-        return heap.unordered.map {
-            [$0.x, $0.y]
-        }
+        return ptsHeap.unordered.map { [$0.x, $0.y]}
     }
 }

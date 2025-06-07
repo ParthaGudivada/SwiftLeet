@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Solution {
+final class MineSweeperSolution {
     private let directions = [
         [-1, -1], [-1, 0], [-1, 1],
         [ 0, -1],          [ 0, 1],

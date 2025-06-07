@@ -1,5 +1,5 @@
 //
-//  Solution 3.swift
+//  MazeSolution.swift
 //  SwiftLeet
 //
 //  Created by Parthasarathy Gudivada on 5/29/25.
