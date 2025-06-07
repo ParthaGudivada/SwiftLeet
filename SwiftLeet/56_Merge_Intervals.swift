@@ -9,18 +9,16 @@ import Foundation
 
 final class MergeIntervalsSolution {
     func merge(_ intervals: [[Int]]) -> [[Int]] {
-        let sorted = intervals.sorted { $0[0] < $1[0] }
-        let len = sorted.count
-
+        let intervals = intervals.sorted { $0[0] < $1[0]}
+        let len = intervals.count
         var rslt = [[Int]]()
-        rslt.append(sorted[0])
-
-        for i in 1 ..< len {
-            let last = rslt[rslt.count - 1]
-            let cur = sorted[i]
-
-            if cur[0] <= last[1] {
-                rslt[rslt.count - 1][1] = max(last[1], cur[1])
+        rslt.append(intervals[0])
+        
+        for idx in 1 ..< len {
+            let cur = intervals[idx]
+            
+            if let last = rslt.last, cur[0] <= last[1] {
+                rslt[rslt.count - 1][1] = max(cur[1], last[1])
             } else {
                 rslt.append(cur)
             }
