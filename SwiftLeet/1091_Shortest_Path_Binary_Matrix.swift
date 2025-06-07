@@ -61,6 +61,61 @@ final class ShortestPathBinaryMatrixSolution {
     }
 }
 
+final class ShortestPathBinaryMatrixVariant1Solution {
+    struct PosPath {
+        let row: Int
+        let col: Int
+        let path: [[Int]]
+
+        init(_ row: Int, _ col: Int, _ path: [[Int]]) {
+            self.row = row
+            self.col = col
+            self.path = path
+        }
+    }
+
+    func shortestPath(_ grid: [[Int]]) -> [[Int]] {
+        let directions = [
+            [-1, -1], [-1, 0], [-1, 1],
+            [ 0, -1],          [ 0, 1],
+            [ 1, -1], [ 1, 0], [ 1, 1]
+        ]
+
+        let len = grid.count
+
+        if grid[0][0] == 1 || grid[len - 1][len - 1] == 1 {
+            return []
+        }
+
+        var visited = Array(repeating: Array(repeating: false, count: len), count: len)
+        var queue = [PosPath]()
+        queue.append(PosPath(0, 0, [[0, 0]]))
+        visited[0][0] = true
+
+        while !queue.isEmpty {
+            let cur = queue.removeFirst()
+
+            if cur.row == len - 1 && cur.col == len - 1 {
+                return cur.path
+            }
+
+            for dir in directions {
+                let x = dir[0] + cur.row
+                let y = dir[1] + cur.col
+
+                if x >= 0 && x < len && y >= 0 && y < len && grid[x][y] == 0 && !visited[x][y] {
+                    visited[x][y] = true
+                    var newPath = cur.path
+                    newPath.append([x, y])
+                    queue.append(PosPath(x, y, newPath))
+                }
+            }
+        }
+
+        return []
+    }
+}
+
 final class ShortestPathBinaryMatrixVariant1OptimizedSolution {
     struct PosPath {
         let row: Int
@@ -126,61 +181,6 @@ final class ShortestPathBinaryMatrixVariant1OptimizedSolution {
         }
 
         return path.reversed()
-    }
-}
-
-final class ShortestPathBinaryMatrixVariant1Solution {
-    struct PosPath {
-        let row: Int
-        let col: Int
-        let path: [[Int]]
-
-        init(_ row: Int, _ col: Int, _ path: [[Int]]) {
-            self.row = row
-            self.col = col
-            self.path = path
-        }
-    }
-
-    func shortestPath(_ grid: [[Int]]) -> [[Int]] {
-        let directions = [
-            [-1, -1], [-1, 0], [-1, 1],
-            [ 0, -1],          [ 0, 1],
-            [ 1, -1], [ 1, 0], [ 1, 1]
-        ]
-
-        let len = grid.count
-
-        if grid[0][0] == 1 || grid[len - 1][len - 1] == 1 {
-            return []
-        }
-
-        var visited = Array(repeating: Array(repeating: false, count: len), count: len)
-        var queue = [PosPath]()
-        queue.append(PosPath(0, 0, [[0, 0]]))
-        visited[0][0] = true
-
-        while !queue.isEmpty {
-            let cur = queue.removeFirst()
-
-            if cur.row == len - 1 && cur.col == len - 1 {
-                return cur.path
-            }
-
-            for dir in directions {
-                let x = dir[0] + cur.row
-                let y = dir[1] + cur.col
-
-                if x >= 0 && x < len && y >= 0 && y < len && grid[x][y] == 0 && !visited[x][y] {
-                    visited[x][y] = true
-                    var newPath = cur.path
-                    newPath.append([x, y])
-                    queue.append(PosPath(x, y, newPath))
-                }
-            }
-        }
-
-        return []
     }
 }
 
