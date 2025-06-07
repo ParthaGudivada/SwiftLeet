@@ -58,3 +58,67 @@ final class SparseVector {
     }
 }
 
+final class SparseVectorVariant {
+    struct ColVal {
+        let col: Int
+        let val: Int
+
+        init(_ col: Int, _ val: Int) {
+            self.col = col
+            self.val = val
+        }
+    }
+
+    private(set) var colVals = [ColVal]()
+
+    init(_ nums: [Int]) {
+        for (i, num) in nums.enumerated() {
+            if num != 0  {
+                colVals.append(ColVal(i, num))
+            }
+        }
+    }
+
+    // Return the dotProduct of two sparse vectors
+    func dotProduct(_ vec: SparseVectorVariant) -> Int {
+        let l1 = colVals.count
+
+        let otherVals = vec.colVals
+        let l2 = otherVals.count
+
+        var rslt = 0
+
+        if l1 < l2 {
+            for colVal in colVals {
+                rslt += colVal.val * binSearchVal(otherVals, colVal.col)
+            }
+
+        } else {
+            for colVal in otherVals {
+                rslt += colVal.val * binSearchVal(colVals, colVal.col)
+            }
+        }
+
+        return rslt
+    }
+
+    private func binSearchVal(_ searchRange: [ColVal], _ targetIdx: Int) -> Int {
+        var l = 0
+        var r = searchRange.count - 1
+
+        while l <= r {
+            let m = ( ( r - l ) / 2 ) + l
+            let cur = searchRange[m]
+
+            if targetIdx == cur.col {
+                return cur.val
+            } else if targetIdx > cur.col {
+                l = m + 1
+            } else {
+                r = m - 1
+            }
+        }
+
+        return 0
+    }
+}

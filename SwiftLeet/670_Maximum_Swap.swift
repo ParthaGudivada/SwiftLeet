@@ -39,41 +39,7 @@ class MaximumSwapSolution {
     }
 }
 
-//class MaximumSwapVariantSolution {
-//    func maximumSwapFor2ndLargest(_ nums: [Int]) -> [Int] {
-//        var freqs = Array(repeating: 0, count: 10)
-//
-//        for num in nums {
-//            freqs[num] += 1
-//        }
-//
-//        var rslt = [Int]()
-//
-//        for idx in stride(from: freqs.count - 1, through: 0, by: -1) {
-//            var cur =  freqs[idx]
-//            while cur > 0 {
-//                rslt.append(idx)
-//                cur -= 1
-//            }
-//        }
-//
-//        let len = rslt.count
-//        var prevIdx = len - 1
-//
-//        for curIdx in stride(from: len - 2, through: 0, by: -1) {
-//            if rslt[curIdx] > rslt[prevIdx] {
-//                rslt.swapAt(curIdx, prevIdx)
-//                break
-//            }
-//
-//            prevIdx = curIdx
-//        }
-//
-//        return rslt
-//    }
-//}
-
-class MaximumSwapVariantSolution {
+final class MaximumSwapVariantSolution {
     func maximumSwapFor2ndLargest(_ nums: [Int]) -> [Int] {
         var freqs = Array(repeating: 0, count: 10)
 
