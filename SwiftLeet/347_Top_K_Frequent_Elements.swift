@@ -29,7 +29,7 @@ final class TopKFrequentElementsSolution {
                 rslt.append(num)
 
                 if rslt.count == k {
-                    return rslt
+                    break
                 }
             }
         }
