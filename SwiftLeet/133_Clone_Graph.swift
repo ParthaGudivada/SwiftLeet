@@ -105,35 +105,3 @@ final class CloneGraphVariantSolution {
         return clone
     }
 }
-
-//class CloneGraphVariantSolution {
-//    func cloneGraph(_ lists: [Node1?]) -> [Node1?] {
-//        var clonedList = [Node1?]()
-//
-//        for node in lists where node != nil {
-//            var oldToNew = [Node1: Node1]()
-//            clonedList.append(helper(node, &oldToNew))
-//        }
-//
-//        return clonedList
-//    }
-//
-//    private func helper(_ node: Node1?, _ oldToNew: inout [Node1: Node1]) -> Node1? {
-//        guard let node else {
-//            return nil
-//        }
-//
-//        if let exist = oldToNew[node] {
-//            return exist
-//        }
-//
-//        let newOne = Node1(node.val)
-//        oldToNew[node] = newOne
-//
-//        for neighbor in node.neighbors {
-//            newOne.neighbors.append(helper(neighbor, &oldToNew))
-//        }
-//
-//        return newOne
-//    }
-//}
