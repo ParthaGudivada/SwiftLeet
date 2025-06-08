@@ -15,7 +15,7 @@ final class SlidingMedianSolution {
 
         for i in k ..< len {
             rslt.append(median(window))
-            print("after first")
+
             if let firstIndex = window.firstIndex(of: nums[i - k]) {
                 window.remove(at: firstIndex)
             }
