@@ -15,7 +15,7 @@ public class ListNode {
 
 extension ListNode: Equatable {
     public static func == (lhs: ListNode, rhs: ListNode) -> Bool {
-        lhs.val == rhs.val
+        lhs === rhs 
     }
 }
 

@@ -21,11 +21,11 @@ final class CloneBinaryTreeRandomPointerSolution {
         }
 
         static func == (lhs: Node, rhs: Node) -> Bool {
-            lhs.val == rhs.val
+            lhs === rhs
         }
 
         func hash(into hasher: inout Hasher) {
-            hasher.combine(val)
+            hasher.combine(ObjectIdentifier(self))
         }
     }
 
@@ -42,11 +42,11 @@ final class CloneBinaryTreeRandomPointerSolution {
         }
 
         static func == (lhs: NodeCopy, rhs: NodeCopy) -> Bool {
-            lhs.val == rhs.val
+            lhs === rhs
         }
 
         func hash(into hasher: inout Hasher) {
-            hasher.combine(val)
+            hasher.combine(ObjectIdentifier(self))
         }
     }
 

@@ -18,15 +18,11 @@ final class CloneGraphSolution {
         }
 
         static func == (lhs: Node, rhs: Node) -> Bool {
-            lhs.val == rhs.val && lhs.neighbors == rhs.neighbors
+            lhs === rhs
         }
 
         func hash(into hasher: inout Hasher) {
-            hasher.combine(val)
-
-            for neighbor in neighbors where neighbor != nil {
-                hasher.combine(neighbor!.val)
-            }
+            hasher.combine(ObjectIdentifier(self))
         }
     }
 
@@ -66,15 +62,11 @@ final class CloneGraphVariantSolution {
         }
 
         static func == (lhs: Node, rhs: Node) -> Bool {
-            lhs.val == rhs.val && lhs.neighbors == rhs.neighbors
+            lhs === rhs
         }
 
         func hash(into hasher: inout Hasher) {
-            hasher.combine(val)
-
-            for neighbor in neighbors where neighbor != nil {
-                hasher.combine(neighbor!.val)
-            }
+            hasher.combine(ObjectIdentifier(self))
         }
     }
 

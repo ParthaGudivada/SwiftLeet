@@ -16,7 +16,7 @@ final class CircularListSolution {
         }
 
         static func == (lhs: Node, rhs: Node) -> Bool {
-            lhs.val == rhs.val
+            lhs === rhs
         }
 
         static func < (lhs: Node, rhs: Node) -> Bool {

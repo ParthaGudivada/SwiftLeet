@@ -23,12 +23,12 @@ public class TreeNode {
 
 extension TreeNode: Equatable {
     public static func == (lhs: TreeNode, rhs: TreeNode) -> Bool {
-        lhs.val == rhs.val
+        lhs === rhs
     }
 }
 
 extension TreeNode: Hashable {
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(val)
+        hasher.combine(ObjectIdentifier(self))
     }
 }
