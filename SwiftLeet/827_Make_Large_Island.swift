@@ -92,7 +92,7 @@ final class DJSet {
             return
         }
 
-        if upU < upV {
+        if size[upU] < size[upV] {
             size[upV] += size[upU]
             parent[upU] = upV
         } else {
